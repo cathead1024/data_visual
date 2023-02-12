@@ -21,6 +21,79 @@ const frameIn = [
         },
         component: () => import('../views/home/index.vue')
       },
+      {
+        path: 'newManage',
+        name: 'newManage',
+        meta: {
+          title: '新闻管理',
+          auth: true
+        },
+        component: () => import('../views/newManage/index.vue')
+      },
+ 
+
+   {
+        path: 'poa',
+        name: 'poa',
+        meta: {
+          title: '舆情分析',
+          auth: true
+        },
+        component: () => import('../views/poa/index.vue')
+      }
+      ,{
+            path: 'national_data',
+            name: 'national_data',
+            meta: {
+              title: '全国疫情数据',
+              auth: true
+            },
+            component: () => import('../views/nationalData/index.vue')
+          },{
+            path: 'overseas_data',
+            name: 'overseas_data',
+            meta: {
+              title: '海外疫情数据',
+              auth: true
+            },
+            component: () => import('../views/overseasData/index.vue')
+          },{
+            path: 'pdq',
+            name: 'pdq',
+            meta: {
+              title: '省份疫情数据查询',
+              auth: true
+            },
+            component: () => import('../views/pdq/index.vue')
+          },
+        
+          {
+            path: 'overseas_time_shaft',
+            name: 'overseas_time_shaft',
+            meta: {
+              title: '国内疫情时间轴',
+              auth: true
+            },
+            component: () => import('../views/overseasTimeShaft/index.vue')
+          },
+ {
+            path: 'national_time_shaft',
+            name: 'national_time_shaft',
+            meta: {
+              title: '海外疫情时间轴',
+              auth: true
+            },
+            component: () => import('../views/nationalTimeShaft/index.vue')
+          },
+ {
+            path: 'user_info',
+            name: 'user_info',
+            meta: {
+              title: '个人信息',
+              auth: true
+            },
+            component: () => import('../views/userInfo/index.vue')
+          },
       // 系统 前端日志
       {
         path: 'log',
