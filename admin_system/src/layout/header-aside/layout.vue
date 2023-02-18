@@ -1,55 +1,52 @@
 <template>
-  <div class="d2-layout-header-aside-group" :style="styleLayoutMainGroup" :class="{grayMode: grayActive}">
+  <div class="d2-layout-header-aside-group" :style="styleLayoutMainGroup" :class="{ grayMode: grayActive }">
     <!-- 半透明遮罩 -->
     <div class="d2-layout-header-aside-mask"></div>
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
       <div class="d2-theme-header" :style="{ opacity: this.searchActive ? 0.5 : 1 }" flex-box="0" flex>
-        <router-link
-          to="/index"
-          :class="{'logo-group': true, 'logo-transition': asideTransition}"
-          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}"
-          flex-box="0">
+        <router-link to="/index" :class="{ 'logo-group': true, 'logo-transition': asideTransition }"
+          :style="{ width: asideCollapse ? asideWidthCollapse : asideWidth }" flex-box="0">
           <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
         </router-link>
         <div class="toggle-aside-btn" @click="handleToggleAside" flex-box="0">
-          <d2-icon name="bars"/>
+          <d2-icon name="bars" />
         </div>
-        <d2-menu-header flex-box="1"/>
+        <!-- <d2-menu-header flex-box="1"/> -->
+        <div class="d2-header-center">
+
+        </div>
         <!-- 顶栏右侧 -->
         <div class="d2-header-right" flex-box="0">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
-          <d2-header-search @click="handleSearchClick"/>
+          <!-- <d2-header-search @click="handleSearchClick"/>
           <d2-header-log/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
           <d2-header-size/>
           <d2-header-locales/>
-          <d2-header-color/>
-          <d2-header-user/>
+          <d2-header-color/> -->
+          <d2-header-user />
         </div>
       </div>
       <!-- 下面 主体 -->
       <div class="d2-theme-container" flex-box="1" flex>
         <!-- 主体 侧边栏 -->
-        <div
-          flex-box="0"
-          ref="aside"
-          :class="{'d2-theme-container-aside': true, 'd2-theme-container-transition': asideTransition}"
-          :style="{
+        <div flex-box="0" ref="aside"
+          :class="{ 'd2-theme-container-aside': true, 'd2-theme-container-transition': asideTransition }" :style="{
             width: asideCollapse ? asideWidthCollapse : asideWidth,
             opacity: this.searchActive ? 0.5 : 1
           }">
-          <d2-menu-side/>
+          <d2-menu-side />
         </div>
         <!-- 主体 -->
         <div class="d2-theme-container-main" flex-box="1" flex>
           <!-- 搜索 -->
           <transition name="fade-scale">
             <div v-if="searchActive" class="d2-theme-container-main-layer" flex>
-              <d2-panel-search ref="panelSearch" @close="searchPanelClose"/>
+              <d2-panel-search ref="panelSearch" @close="searchPanelClose" />
             </div>
           </transition>
           <!-- 内容 -->
@@ -57,7 +54,7 @@
             <div v-if="!searchActive" class="d2-theme-container-main-layer" flex="dir:top">
               <!-- tab -->
               <div class="d2-theme-container-main-header" flex-box="0">
-                <d2-tabs/>
+                <d2-tabs />
               </div>
               <!-- 页面 -->
               <div class="d2-theme-container-main-body" flex-box="1">
@@ -107,7 +104,7 @@ export default {
     d2HeaderLog,
     d2HeaderColor
   },
-  data () {
+  data() {
     return {
       // [侧边栏宽度] 正常状态
       asideWidth: '200px',
@@ -129,7 +126,7 @@ export default {
     /**
      * @description 用来实现带参路由的缓存
      */
-    routerViewKey () {
+    routerViewKey() {
       // 默认情况下 key 类似 __transition-n-/foo
       // 这里的字符串操作是为了最终 key 的格式和原来相同 类似 __transition-n-__stamp-time-/foo
       const stamp = this.$route.meta[`__stamp-${this.$route.path}`] || ''
@@ -138,7 +135,7 @@ export default {
     /**
      * @description 最外层容器的背景图片样式
      */
-    styleLayoutMainGroup () {
+    styleLayoutMainGroup() {
       return this.themeActiveSetting.backgroundImage
         ? { backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')` }
         : {}
@@ -151,7 +148,7 @@ export default {
     /**
      * 接收点击切换侧边栏的按钮
      */
-    handleToggleAside () {
+    handleToggleAside() {
       this.asideCollapseToggle()
     }
   }
@@ -161,4 +158,15 @@ export default {
 <style lang="scss">
 // 注册主题
 @import '~@/assets/style/theme/register.scss';
+
+.d2-theme-header {
+  height: 48px;
+}
+
+.d2-header-center {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
 </style>

@@ -3,45 +3,45 @@
     <!-- 左边 -->
     <div class="left home__colum">
       <!-- 各类人员占比 -->
-      <section class="people-ratio home-section">
+      <section class=" home__colum__section  home__colum__section--warper">
         <people-ratio></people-ratio>
       </section>
       <!-- 从2019年到现在的每个月的确诊情况  -->
-      <section class="diagnosis-trend">
+      <section class=" home__colum__section">
         <diagnosis-trend></diagnosis-trend>
       </section>
       <!-- 全球感染人数top3 -->
-      <section class="diagnosis-top">
+      <section class=" home__colum__section">
         <diagnosis-top></diagnosis-top>
       </section>
     </div>
     <!-- 中间  -->
     <div class="center home__colum">
       <!--  治愈率 -->
-      <section class="cure-rate">
+      <section class=" home__colum__section">
         <cure-rate></cure-rate>
       </section>
       <!-- 全球的治愈 感染 死亡  -->
-      <section class="global-statistics">
+      <section class=" home__colum__section">
         <global-statistics></global-statistics>
       </section>
       <!-- 全球从2019到现在的死亡人数 -->
-      <section class="global-die">
+      <section class=" home__colum__section">
         <global-die></global-die>
       </section>
     </div>
     <!-- 右边  -->
     <div class="right home__colum">
       <!-- 四年确诊人数情况 -->
-      <section class="diagnostic-statistics">
+      <section class=" home__colum__section">
         <diagnostic-statistics></diagnostic-statistics>
       </section>
       <!-- 调色盘 -->
-      <section class="public-palette">
+      <section class=" home__colum__section">
         <palette></palette>
       </section>
       <!-- 数据更新情况 -->
-      <section class="data-status">
+      <section class=" home__colum__section">
         <updata-status></updata-status>
       </section>
     </div>
@@ -82,61 +82,36 @@ export default {
 }
 
 .home {
-  display: grid;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
- 
-}
+  flex: 1;
+  display: grid;
+  column-gap: 24px;
 
-.home-section {
-  position: relative;
-  background: #f1f2f7;
-  box-shadow: 15px 15px 30px #d9deee,
-    -15px -15px 30px #ffffff;
-  border-radius: 16px;
-}
+  &__colum {
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 24px;
+    display: grid;
+    &__section {
+      position: relative;
+      height: 100%;
+      width: 100%;
 
-.global-die,
-.global-statistics,
-.diagnosis-top,
-.diagnosis-trend,
-.people-ratio {
-  width: 400px;
-  height: 200px;
+      &--warper {
+        background: #f1f2f7;
+        box-shadow: 15px 15px 30px #d9deee,
+          -15px -15px 30px #ffffff;
+        border-radius: 16px;
+      }
+    }
+  }
 }
-
-.public-palette {
-  height: 170px;
-  width: 400px;
-}
-
-.data-status {
-  position: relative;
-  width: 400px;
-  height: 150px;
-}
-
-.diagnosis-trend {
-  height: 250px;
-}
-
-.global-die {
-  margin-top: 24px;
-}
-
-.cure-rate {
-  position: relative;
-  height: 200px;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.diagnostic-statistics {
-  position: relative;
-  width: 400px;
-  height: 300px;
+.right{
+  grid-template-rows: 2fr 1fr 1fr;
 }
 </style>

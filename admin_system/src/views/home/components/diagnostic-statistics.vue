@@ -2,11 +2,11 @@
   <div class="statistics">
     <div class="card">
       <div class="chart" id="global-chart"></div>
-      <p class="des">2019~2023全球疫情确证人数</p>
+      <p class="des">2019~2023全球疫情确诊人数</p>
     </div>
     <div class="card">
       <div class="chart" id="domestic-chart"></div>
-      <p class="des">2019~2023全国疫情确证人数</p>
+      <p class="des">2019~2023全国疫情确诊人数</p>
     </div>
   </div>
 </template>
@@ -17,7 +17,6 @@ import { GridComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 echarts.use([GridComponent, BarChart, CanvasRenderer]);
-
 export default {
   name: 'AdminSystemDiagnosticStatistics',
   methods: {
@@ -87,20 +86,22 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  display: grid;
 
   .card {
     position: relative;
-    width: 180px;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
     .chart {
       position: relative;
       width: 100%;
+      height: 100%;
       flex: 1;
       border-radius: 16px;
       background: #f1f2f7;

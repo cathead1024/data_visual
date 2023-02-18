@@ -42,7 +42,7 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
-
+  
   &__item {
     position: relative;
     width: 50%;
@@ -50,17 +50,16 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin-right: 24px;
     .circle {
       position: relative;
-      width: 150px;
-      height: 150px;
       border-radius: 50%;
       background-color: #eef1f8;
       box-shadow: 5px 5px 10px #bebebe,
         -5px -5px 10px #ffffff;
-
-      &__inner {
+      height: 100%;
+      aspect-ratio: 1/1;
+        &__inner {
         position: relative;
         width: 100%;
         height: 100%;

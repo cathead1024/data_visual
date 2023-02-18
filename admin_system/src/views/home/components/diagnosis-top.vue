@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <article class="top__card">
-      <section class="top__card__body" v-for="item of top" :key="item">
+      <section class="top__card__body" v-for="(item, index) of top" :key="index">
         <div class="body__title">
           <p>43%</p>
           <p>未知国家</p>
@@ -52,22 +52,17 @@ export default {
       width: 100%;
       flex: 1;
       display: flex;
-
       .body {
         position: relative;
 
         &__title {
           position: relative;
-          width: 50px;
-          height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           margin-right: 8px;
-
           p {
-            width: 100%;
             margin: 0;
             text-align: center;
 
