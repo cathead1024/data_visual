@@ -49,69 +49,71 @@
 </template>
 
 <script>
-import d2Container from '@/components/d2-container/index';
-import peopleRatio from '@/views/home/components/people-ratio.vue'
-import cureRate from '@/views/home/components/cure-rate.vue'
-import diagnosticStatistics from '@/views/home/components/diagnostic-statistics.vue'
-import diagnosisTrend from '@/views/home/components/diagnosis-trend.vue'
-import diagnosisTop from '@/views/home/components/diagnosis-top.vue'
-import globalStatistics from '@/views/home/components/global-statistics.vue'
-import globalDie from '@/views/home/components/global-die.vue';
-import palette from '@/views/home/components/palette.vue';
-import updataStatus from '@/views/home/components/updata-status.vue';
+  import d2Container from '@/components/d2-container/index';
+  import peopleRatio from '@/views/home/components/people-ratio.vue'
+  import cureRate from '@/views/home/components/cure-rate.vue'
+  import diagnosticStatistics from '@/views/home/components/diagnostic-statistics.vue'
+  import diagnosisTrend from '@/views/home/components/diagnosis-trend.vue'
+  import diagnosisTop from '@/views/home/components/diagnosis-top.vue'
+  import globalStatistics from '@/views/home/components/global-statistics.vue'
+  import globalDie from '@/views/home/components/global-die.vue';
+  import palette from '@/views/home/components/palette.vue';
+  import updataStatus from '@/views/home/components/updata-status.vue';
 
-export default {
-  name: "AdminSystemIndex",
-  components: {
-    d2Container, peopleRatio, cureRate,
-    diagnosticStatistics, diagnosisTrend,
-    diagnosisTop, globalStatistics,
-    globalDie, palette,
-    updataStatus
-  }
-};
+  export default {
+    name: "AdminSystemIndex",
+    components: {
+      d2Container, peopleRatio, cureRate,
+      diagnosticStatistics, diagnosisTrend,
+      diagnosisTop, globalStatistics,
+      globalDie, palette,
+      updataStatus
+    }
+  };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #eef1f8;
-  padding: 24px;
-}
-
-.home {
-  position: relative;
-  height: 100%;
-  box-sizing: border-box;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  flex: 1;
-  display: grid;
-  column-gap: 24px;
-
-  &__colum {
+  .container {
+    position: relative;
+    width: 100%;
     height: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 24px;
-    display: grid;
-    &__section {
-      position: relative;
-      height: 100%;
-      width: 100%;
+    background: #eeeff8;
+    padding: 24px;
+  }
 
-      &--warper {
-        background: #f1f2f7;
-        box-shadow: 15px 15px 30px #d9deee,
-          -15px -15px 30px #ffffff;
-        border-radius: 16px;
+  .home {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    flex: 1;
+    display: grid;
+    column-gap: 24px;
+
+    &__colum {
+      height: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 24px;
+      display: grid;
+
+      &__section {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        &--warper {
+          background: #f1f2f7;
+          box-shadow: 15px 15px 30px #d9deee,
+            -15px -15px 30px #ffffff;
+          border-radius: 16px;
+        }
       }
     }
   }
-}
-.right{
-  grid-template-rows: 2fr 1fr 1fr;
-}
+
+  .right {
+    grid-template-rows: 2fr 1fr 1fr;
+  }
 </style>

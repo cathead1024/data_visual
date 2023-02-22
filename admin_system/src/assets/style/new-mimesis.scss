@@ -1,0 +1,47 @@
+$whiteShadow: -6px -6px 10px #fff;
+$blackShadow: 6px 6px 10px #e1e3ed;
+$background: #f4f5fa;
+$border: 1px solid rgba(255, 255, 255, .2);
+$color: #4779e8;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 卡片的样式
+.mimesis__card {
+  position: relative;
+  box-shadow: $whiteShadow, $blackShadow;
+  background: $blackShadow;
+  background: $background;
+  border: $border;
+  border-radius: 16px;
+}
+
+// 按钮的样式
+.mimesis__btn {
+  position: relative;
+  box-shadow: $whiteShadow, $blackShadow;
+  background: $background;
+  border: $border;
+  width: 150px;
+  min-height: 38px;
+  color: $color;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.25s ease-out;
+
+  &:hover {
+    color: #fff;
+    background: #4f85fc;
+    box-shadow: inset 5px 5px 7px #426ed1,
+      inset -5px -5px 7px #5c9cff;
+  }
+
+  &:active {
+    transform: scale(.8);
+  }
+}

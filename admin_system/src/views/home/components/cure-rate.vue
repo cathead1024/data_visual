@@ -18,56 +18,56 @@
 </template>
 
 <script>
-export default {
-  name: 'AdminSystemCureRate',
-};
+  export default {
+    name: 'AdminSystemCureRate',
+  };
 </script>
 
 <style lang="scss" scoped>
-.rate {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
+  .rate {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
 
-section {
-  position: relative;
-  width: 100%;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  section {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-  p {
-    margin: 8px 0;
-    text-align: center;
+    p {
+      margin: 8px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    span {
+      color: #848891;
+      font-size: 12px;
+    }
+  }
+
+  .annular {
+    position: relative;
+    width: 60%;
+    aspect-ratio: 1/1;
+    background: #f1f2f7;
+    box-shadow: 15px 15px 30px #d9deee,
+      -15px -15px 30px #ffffff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::v-deep .el-progress--circle .el-progress__text,
+  .el-progress--dashboard .el-progress__text {
+    font-size: 24px !important;
     font-weight: bold;
   }
-
-  span {
-    color: #848891;
-    font-size: 12px;
-  }
-}
-
-.annular {
-  position: relative;
-  width: 60%;
-  aspect-ratio: 1/1;
-  background: #f1f2f7;
-  box-shadow: 15px 15px 30px #d9deee,
-    -15px -15px 30px #ffffff;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-::v-deep .el-progress--circle .el-progress__text,
-.el-progress--dashboard .el-progress__text {
-  font-size: 24px !important;
-  font-weight: bold;
-}
 </style>

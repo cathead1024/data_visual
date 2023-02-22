@@ -9,7 +9,7 @@ export default {
   name: 'd2-contextmenu',
   props: {
     visible: {
-      type: Boolean,
+      type: Boolean,  
       default: false
     },
     x: {
